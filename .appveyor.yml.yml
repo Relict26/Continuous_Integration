@@ -1,0 +1,17 @@
+image: Ubuntu2004 
+
+stack: jdk 11  # Версия JDK
+
+branches:
+  only:
+    - main  # Ветка Git
+
+build: off  
+
+install:
+  - java -jar ./artifacts/app-mbank.jar &
+  - chmod +x gradlew 
+
+build_script:
+  # Запускаем автотесты
+  - ./gradlew test --info  # Запускаем тесты с выводом информации
