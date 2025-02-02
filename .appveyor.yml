@@ -1,0 +1,18 @@
+image: Ubuntu  # образ для сборки
+
+stack: jdk 11  # версия JDK
+
+branches:
+  only:
+    - main  # ветка git
+
+build: off
+
+install:
+  - java -jar ./artifacts/app-mbank.jar &
+  - sleep 10
+  - chmod +x gradlew
+
+build_script:
+
+  - ./gradlew test --info
