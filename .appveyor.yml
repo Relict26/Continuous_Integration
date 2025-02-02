@@ -6,13 +6,25 @@ branches:
   only:
     - main  # ветка git
 
+<<<<<<< HEAD
 build: off
 
 install:
   - java -jar ./artifacts/app-mbank.jar &
   - sleep 10
+=======
+build: off  # будем использовать свой скрипт сборки
+
+install:
+  # запускаем SUT (& означает, что в фоновом режиме не блокируем терминал для запуска тестов)
+  - java -jar ./artifacts/app-mbank.jar &
+>>>>>>> 56e9a078d0a6d9d6a454f3f4dca93bda8c0a53d9
   - chmod +x gradlew
 
 build_script:
 
+<<<<<<< HEAD
   - ./gradlew test --info
+=======
+  - ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
+>>>>>>> 56e9a078d0a6d9d6a454f3f4dca93bda8c0a53d9
